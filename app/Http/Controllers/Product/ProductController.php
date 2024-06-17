@@ -63,6 +63,7 @@ class ProductController extends Controller
 
             'product_image'     => $image,
             'name'              => $request->name,
+            'part_number'       => $request->partNumber,
             'category_id'       => $request->category_id,
             'unit_id'           => $request->unit_id,
             'quantity'          => $request->quantity,
@@ -121,6 +122,7 @@ class ProductController extends Controller
         }
 
         $product->name = $request->name;
+        $product->part_number = $request->partNumber;
         $product->slug = Str::slug($request->name, '-');
         $product->category_id = $request->category_id;
         $product->unit_id = $request->unit_id;

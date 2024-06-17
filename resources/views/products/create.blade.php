@@ -58,13 +58,23 @@
                             </div>
                             <div class="card-body">
                                 <div class="row row-cards">
-                                    <div class="col-md-12">
+                                    <div class="col-md-6">
 
                                         <x-input name="name"
                                                  id="name"
                                                  placeholder="Product name"
                                                  value="{{ old('name') }}"
                                         />
+                                    </div>
+
+                                    <div class="col-md-6">
+
+                                        <x-input name="partNumber"
+                                                 id="partNumber"
+                                                 placeholder="Product Part Number"
+                                                 value="{{ old('partNumber') }}"
+                                        />
+                                        
                                     </div>
 
                                     <div class="col-sm-6 col-md-6">

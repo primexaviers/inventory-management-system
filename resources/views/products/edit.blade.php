@@ -61,7 +61,7 @@
                                     </h3>
 
                                     <div class="row row-cards">
-                                        <div class="col-md-12">
+                                        <div class="col-md-6">
                                             <div class="mb-3">
                                                 <label for="name" class="form-label">
                                                     {{ __('Name') }}
@@ -71,6 +71,25 @@
                                                 <input type="text" id="name" name="name"
                                                     class="form-control @error('name') is-invalid @enderror"
                                                     placeholder="Product name" value="{{ old('name', $product->name) }}">
+
+                                                @error('name')
+                                                    <div class="invalid-feedback">
+                                                        {{ $message }}
+                                                    </div>
+                                                @enderror
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="mb-3">
+                                                <label for="partNumber" class="form-label">
+                                                    {{ __('Part Number') }}
+                                                    <span class="text-danger">*</span>
+                                                </label>
+
+                                                <input type="text" id="partNumber" name="partNumber"
+                                                    class="form-control @error('partNumber') is-invalid @enderror"
+                                                    placeholder="Product Part Number" value="{{ old('partNumber', $product->partNumber) }}">
 
                                                 @error('name')
                                                     <div class="invalid-feedback">
