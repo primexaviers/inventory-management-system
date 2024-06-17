@@ -81,7 +81,7 @@
                                         </tr>
                                         <tr>
                                             <td>Part Number</td>
-                                            <td>{{ $product->partNumber }}</td>
+                                            <td>{{ $product->part_number }}</td>
                                         </tr>
                                         <tr>
                                             <td>Slug</td>

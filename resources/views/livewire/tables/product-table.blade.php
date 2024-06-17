@@ -116,7 +116,7 @@
                             {{ $product->name }}
                         </td>
                         <td class="align-middle text-center">
-                            {{ $product->partNumber }}
+                            {{ $product->part_number }}
                         </td>
                         <td class="align-middle text-center">
                             {{ $product->code }}
