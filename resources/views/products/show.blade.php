@@ -80,7 +80,7 @@
                                             <td>{{ $product->name }}</td>
                                         </tr>
                                         <tr>
-                                            <td>Name</td>
+                                            <td>Part Number</td>
                                             <td>{{ $product->partNumber }}</td>
                                         </tr>
                                         <tr>
