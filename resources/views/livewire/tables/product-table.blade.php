@@ -7,26 +7,18 @@
         </div>
 
         <div class="card-actions btn-group">
-            <div class="dropdown">
-                <a href="#" class="btn-action dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true"
-                    aria-expanded="false">
-                    <x-icon.vertical-dots />
-                </a>
-                <div class="dropdown-menu dropdown-menu-end" style="">
-                    <a href="{{ route('products.create') }}" class="dropdown-item">
-                        <x-icon.plus />
-                        {{ __('Create Product') }}
-                    </a>
-                    <a href="{{ route('products.import.view') }}" class="dropdown-item">
-                        <x-icon.plus />
-                        {{ __('Import Products') }}
-                    </a>
-                    <a href="{{ route('products.export.store') }}" class="dropdown-item">
-                        <x-icon.plus />
-                        {{ __('Export Products') }}
-                    </a>
-                </div>
-            </div>
+            <a href="{{ route('products.create') }}" class="dropdown-item">
+                <x-icon.plus />
+                {{ __('Create Product') }}
+            </a>
+            <a href="{{ route('products.import.view') }}" class="dropdown-item">
+                <x-icon.plus />
+                {{ __('Import Products') }}
+            </a>
+            <a href="{{ route('products.export.store') }}" class="dropdown-item">
+                <x-icon.plus />
+                {{ __('Export Products') }}
+            </a>
         </div>
     </div>
 
@@ -46,9 +38,9 @@
             </div>
             <div class="ms-auto text-secondary">
                 Search:
-                <div class="ms-2 d-inline-block">
-                    <input type="text" wire:model.live="search" class="form-control form-control-sm"
-                        aria-label="Search invoice">
+                <div class="ms-4 d-inline-block">
+                    <input type="text" wire:model.live="search" class="form-control form-control-md rounded"
+                        aria-label="Search invoice" style="width:500px!important">
                 </div>
             </div>
         </div>
@@ -136,56 +128,56 @@
             </thead>
             <tbody>
                 @forelse ($products as $product)
-                    <tr>
-                        <td class="align-middle text-center">
-                            {{ $loop->iteration }}
-                        </td>
-                        <td class="align-middle text-center">
-                            {{ $product->part_number }}
-                        </td>
-                        <td class="align-middle text-center">
-                            {{ $product->name }}
-                        </td>
-                        <td class="align-middle text-center">
-                            {{ $product->quantity }}
-                        </td>
-                        <td class="align-middle text-center">
-                            {{ $product->unit ? $product->unit->name : '--' }}
-                        </td>
-                        <td class="align-middle text-center">
-                            {{ $product->rack }}
-                        </td>
-                        <td class="align-middle text-center">
-                            {{ $product->jenis }}
-                        </td>
-                        <td class="align-middle text-center">
-                            {{ $product->merk }}
-                        </td>
-                        <td class="align-middle text-center">
-                            {{ $product->buying_price }}
-                        </td>
-                        <td class="align-middle text-center">
-                            {{ $product->buying_price }}
-                        </td>
-                        <td class="align-middle text-center">
-                            {{ $product->category ? $product->category->name : '--' }}
-                        </td>
-                        <td class="align-middle text-center">
-                            {{ $product->notes }}
-                        </td>
-                        <td class="align-middle text-center" style="width: 10%">
-                            <x-button.show class="btn-icon" route="{{ route('products.show', $product->uuid) }}" />
-                            <x-button.edit class="btn-icon" route="{{ route('products.edit', $product->uuid) }}" />
-                            <x-button.delete class="btn-icon" route="{{ route('products.destroy', $product->uuid) }}"
-                                onclick="return confirm('Are you sure to delete product {{ $product->name }} ?')" />
-                        </td>
-                    </tr>
+                <tr>
+                    <td class="align-middle text-center">
+                        {{ $loop->iteration }}
+                    </td>
+                    <td class="align-middle text-center">
+                        {{ $product->part_number }}
+                    </td>
+                    <td class="align-middle text-center">
+                        {{ $product->name }}
+                    </td>
+                    <td class="align-middle text-center">
+                        {{ $product->quantity }}
+                    </td>
+                    <td class="align-middle text-center">
+                        {{ $product->unit ? $product->unit->name : '--' }}
+                    </td>
+                    <td class="align-middle text-center">
+                        {{ $product->rack }}
+                    </td>
+                    <td class="align-middle text-center">
+                        {{ $product->jenis }}
+                    </td>
+                    <td class="align-middle text-center">
+                        {{ $product->merk }}
+                    </td>
+                    <td class="align-middle text-center">
+                        {{ $product->buying_price }}
+                    </td>
+                    <td class="align-middle text-center">
+                        {{ $product->buying_price }}
+                    </td>
+                    <td class="align-middle text-center">
+                        {{ $product->category ? $product->category->name : '--' }}
+                    </td>
+                    <td class="align-middle text-center">
+                        {{ $product->notes }}
+                    </td>
+                    <td class="align-middle text-center" style="width: 10%">
+                        <x-button.show class="btn-icon" route="{{ route('products.show', $product->uuid) }}" />
+                        <x-button.edit class="btn-icon" route="{{ route('products.edit', $product->uuid) }}" />
+                        <x-button.delete class="btn-icon" route="{{ route('products.destroy', $product->uuid) }}"
+                            onclick="return confirm('Are you sure to delete product {{ $product->name }} ?')" />
+                    </td>
+                </tr>
                 @empty
-                    <tr>
-                        <td class="align-middle text-center" colspan="7">
-                            No results found
-                        </td>
-                    </tr>
+                <tr>
+                    <td class="align-middle text-center" colspan="7">
+                        No results found
+                    </td>
+                </tr>
                 @endforelse
             </tbody>
         </table>
