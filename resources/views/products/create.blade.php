@@ -77,6 +77,34 @@
                                         
                                     </div>
 
+                                    <div class="col-md-4">
+
+                                        <x-input name="rack"
+                                                 id="rack"
+                                                 placeholder="Rack"
+                                                 value="{{ old('rack') }}"
+                                        />
+                                        
+                                    </div>
+                                    <div class="col-md-4">
+
+                                        <x-input name="jenis"
+                                                 id="jenis"
+                                                 placeholder="jenis"
+                                                 value="{{ old('jenis') }}"
+                                        />
+                                        
+                                    </div>
+                                    <div class="col-md-4">
+
+                                        <x-input name="merk"
+                                                 id="merk"
+                                                 placeholder="merk"
+                                                 value="{{ old('merk') }}"
+                                        />
+                                        
+                                    </div>
+
                                     <div class="col-sm-6 col-md-6">
                                         <div class="mb-3">
                                             <label for="category_id" class="form-label">
@@ -244,7 +272,7 @@
                                                       rows="5"
                                                       class="form-control @error('notes') is-invalid @enderror"
                                                       placeholder="Product notes"
-                                            ></textarea>
+                                            >{{ old('notes') }}</textarea>
 
                                             @error('notes')
                                             <div class="invalid-feedback">

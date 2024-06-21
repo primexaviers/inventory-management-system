@@ -64,7 +64,10 @@
                         {{ __('No.') }}
                     </th>
                     <th scope="col" class="align-middle text-center">
-                        {{ __('Image') }}
+                        <a wire:click.prevent="sortBy('partNumber')" href="#" role="button">
+                            {{ __('PartNumber') }}
+                            @include('inclues._sort-icon', ['field' => 'partNumber'])
+                        </a>
                     </th>
                     <th scope="col" class="align-middle text-center">
                         <a wire:click.prevent="sortBy('name')" href="#" role="button">
@@ -73,27 +76,57 @@
                         </a>
                     </th>
                     <th scope="col" class="align-middle text-center">
-                        <a wire:click.prevent="sortBy('partNumber')" href="#" role="button">
-                            {{ __('PartNumber') }}
-                            @include('inclues._sort-icon', ['field' => 'partNumber'])
+                        <a wire:click.prevent="sortBy('stock')" href="#" role="button">
+                            {{ __('Stock') }}
+                            @include('inclues._sort-icon', ['field' => 'stock'])
                         </a>
                     </th>
                     <th scope="col" class="align-middle text-center">
-                        <a wire:click.prevent="sortBy('code')" href="#" role="button">
-                            {{ __('Code') }}
-                            @include('inclues._sort-icon', ['field' => 'code'])
+                        <a wire:click.prevent="sortBy('satuan')" href="#" role="button">
+                            {{ __('Satuan') }}
+                            @include('inclues._sort-icon', ['field' => 'satuan'])
+                        </a>
+                    </th>
+                    <th scope="col" class="align-middle text-center">
+                        <a wire:click.prevent="sortBy('rack')" href="#" role="button">
+                            {{ __('Rack') }}
+                            @include('inclues._sort-icon', ['field' => 'rack'])
+                        </a>
+                    </th>
+                    <th scope="col" class="align-middle text-center">
+                        <a wire:click.prevent="sortBy('jenis')" href="#" role="button">
+                            {{ __('Jenis') }}
+                            @include('inclues._sort-icon', ['field' => 'jenis'])
+                        </a>
+                    </th>
+                    <th scope="col" class="align-middle text-center">
+                        <a wire:click.prevent="sortBy('merk')" href="#" role="button">
+                            {{ __('Merk') }}
+                            @include('inclues._sort-icon', ['field' => 'merk'])
+                        </a>
+                    </th>
+                    <th scope="col" class="align-middle text-center">
+                        <a wire:click.prevent="sortBy('buying_price')" href="#" role="button">
+                            {{ __('Harga Pokok') }}
+                            @include('inclues._sort-icon', ['field' => 'buying_price'])
+                        </a>
+                    </th>
+                    <th scope="col" class="align-middle text-center">
+                        <a wire:click.prevent="sortBy('sell_price')" href="#" role="button">
+                            {{ __('Harga Jual') }}
+                            @include('inclues._sort-icon', ['field' => 'sell_price'])
                         </a>
                     </th>
                     <th scope="col" class="align-middle text-center">
                         <a wire:click.prevent="sortBy('category_id')" href="#" role="button">
-                            {{ __('Category') }}
+                            {{ __('Tipe') }}
                             @include('inclues._sort-icon', ['field' => 'category_id'])
                         </a>
                     </th>
                     <th scope="col" class="align-middle text-center">
-                        <a wire:click.prevent="sortBy('quantity')" href="#" role="button">
-                            {{ __('Quantity') }}
-                            @include('inclues._sort-icon', ['field' => 'quantity'])
+                        <a wire:click.prevent="sortBy('notes')" href="#" role="button">
+                            {{ __('Keterangan') }}
+                            @include('inclues._sort-icon', ['field' => 'notes'])
                         </a>
                     </th>
                     <th scope="col" class="align-middle text-center">
@@ -108,24 +141,37 @@
                             {{ $loop->iteration }}
                         </td>
                         <td class="align-middle text-center">
-                            <img style="width: 90px;"
-                                src="{{ $product->product_image ? asset('storage/' . $product->product_image) : asset('assets/img/products/default.webp') }}"
-                                alt="">
+                            {{ $product->part_number }}
                         </td>
                         <td class="align-middle text-center">
                             {{ $product->name }}
                         </td>
                         <td class="align-middle text-center">
-                            {{ $product->part_number }}
+                            {{ $product->quantity }}
                         </td>
                         <td class="align-middle text-center">
-                            {{ $product->code }}
+                            {{ $product->unit ? $product->unit->name : '--' }}
+                        </td>
+                        <td class="align-middle text-center">
+                            {{ $product->rack }}
+                        </td>
+                        <td class="align-middle text-center">
+                            {{ $product->jenis }}
+                        </td>
+                        <td class="align-middle text-center">
+                            {{ $product->merk }}
+                        </td>
+                        <td class="align-middle text-center">
+                            {{ $product->buying_price }}
+                        </td>
+                        <td class="align-middle text-center">
+                            {{ $product->buying_price }}
                         </td>
                         <td class="align-middle text-center">
                             {{ $product->category ? $product->category->name : '--' }}
                         </td>
                         <td class="align-middle text-center">
-                            {{ $product->quantity }}
+                            {{ $product->notes }}
                         </td>
                         <td class="align-middle text-center" style="width: 10%">
                             <x-button.show class="btn-icon" route="{{ route('products.show', $product->uuid) }}" />

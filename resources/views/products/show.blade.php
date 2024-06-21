@@ -84,6 +84,18 @@
                                             <td>{{ $product->part_number }}</td>
                                         </tr>
                                         <tr>
+                                            <td>Rack</td>
+                                            <td>{{ $product->rack }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Jenis</td>
+                                            <td>{{ $product->jenis }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Merk</td>
+                                            <td>{{ $product->merk }}</td>
+                                        </tr>
+                                        <tr>
                                             <td>Slug</td>
                                             <td>{{ $product->slug }}</td>
                                         </tr>

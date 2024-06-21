@@ -26,6 +26,10 @@ class StoreProductRequest extends FormRequest
         return [
             'product_image'     => 'image|file|max:2048',
             'name'              => 'required|string',
+            'partNumber'       => 'required|string',
+            'rack'       => 'required|string',
+            'jenis'       => 'required|string',
+            'merk'       => 'required|string',
             'category_id'       => 'required|integer',
             'unit_id'           => 'required|integer',
             'quantity'          => 'required|integer',

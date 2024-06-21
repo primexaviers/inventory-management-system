@@ -89,9 +89,69 @@
 
                                                 <input type="text" id="partNumber" name="partNumber"
                                                     class="form-control @error('partNumber') is-invalid @enderror"
-                                                    placeholder="Product Part Number" value="{{ old('partNumber', $product->partNumber) }}">
+                                                    placeholder="Product Part Number" value="{{ old('partNumber', $product->part_number) }}">
 
-                                                @error('name')
+                                                @error('part_number')
+                                                    <div class="invalid-feedback">
+                                                        {{ $message }}
+                                                    </div>
+                                                @enderror
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-md-4">
+                                            <div class="mb-3">
+                                                <label for="rack" class="form-label">
+                                                    {{ __('Rack') }}
+                                                    <span class="text-danger">*</span>
+                                                </label>
+
+                                                <input type="text" id="rack" name="rack"
+                                                    class="form-control @error('rack') is-invalid @enderror"
+                                                    placeholder="Rack" value="{{ old('rack', $product->rack) }}">
+
+                                                @error('rack')
+                                                    <div class="invalid-feedback">
+                                                        {{ $message }}
+                                                    </div>
+                                                @enderror
+                                            </div>
+                                        </div>
+
+                                        
+                                        <div class="col-md-4">
+                                            <div class="mb-3">
+                                                <label for="jenis" class="form-label">
+                                                    {{ __('Jenis') }}
+                                                    <span class="text-danger">*</span>
+                                                </label>
+
+                                                <input type="text" id="jenis" name="jenis"
+                                                    class="form-control @error('jenis') is-invalid @enderror"
+                                                    placeholder="Jenis" value="{{ old('jenis', $product->jenis) }}">
+
+                                                @error('jenis')
+                                                    <div class="invalid-feedback">
+                                                        {{ $message }}
+                                                    </div>
+                                                @enderror
+                                            </div>
+                                        </div>
+
+                                        
+                                        <div class="col-md-4">
+                                            <div class="mb-3">
+                                                <label for="merk" class="form-label">
+                                                    {{ __('Merk') }}
+                                                    <span class="text-danger">*</span>
+                                                </label>
+
+                                                <input type="text" id="merk" name="merk"
+                                                    class="form-control @error('merk') is-invalid @enderror"
+                                                    placeholder="Merk" value="{{ old('merk', $product->merk) }}">
+
+                                                @error('merk')
                                                     <div class="invalid-feedback">
                                                         {{ $message }}
                                                     </div>

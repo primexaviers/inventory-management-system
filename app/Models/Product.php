@@ -16,6 +16,10 @@ class Product extends Model
 
     public $fillable = [
         'name',
+        'part_number',
+        'rack',
+        'jenis',
+        'merk',
         'slug',
         'code',
         'quantity',
@@ -74,7 +78,7 @@ class Product extends Model
     public function scopeSearch($query, $value): void
     {
         $query->where('name', 'like', "%{$value}%")
-            ->orWhere('code', 'like', "%{$value}%");
+            ->orWhere('part_number', 'like', "%{$value}%");
     }
      /**
      * Get the user that owns the Category
