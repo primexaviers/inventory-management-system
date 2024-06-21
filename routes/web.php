@@ -121,7 +121,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     // Route Quotations
     // Route::get('/quotations/{quotation}/edit', [QuotationController::class, 'edit'])->name('quotations.edit');
-    Route::post('/quotations/complete/{quotation}', [QuotationController::class, 'update'])->name('quotations.update');
+    Route::post('/quotations/complete/{quotation}', [QuotationController::class, 'update'])->name('quotations.complete.update');
     Route::delete('/quotations/delete/{quotation}', [QuotationController::class, 'destroy'])->name('quotations.delete');
 });
 
